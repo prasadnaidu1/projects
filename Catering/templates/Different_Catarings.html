@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+{% include "Welcome.html" %}
+{% load staticfiles %}
+<link href="{% static 'css/Different_typesCaterings.css' %}" rel="stylesheet">
+<div class="gallery">
+  <a  href=/itemslist/>
+    <img src="{% static 'images/prasad.jpg' %}" alt="Cinque Terre" width="300" height="300">
+  </a>
+  <div class="desc"><font size="6">PrasadCaterings</font></div>
+</div>
+
+<div class="gallery">
+  <a  href=/itemslist/>
+    <img src="{% static 'images/raju.jpg' %}" alt="Forest" width="300" height="300">
+  </a>
+  <div class="desc">
+      <font size="6">RajuCaterings</font>
+  </div>
+</div>
+
+<div class="gallery">
+  <a  href=/itemslist/>
+    <img src="{% static 'images/ramesh.jpg' %}" alt="Northern Lights" width="300" height="300">
+  </a>
+  <div class="desc"><font size="6">RameshCaterings</font></div>
+</div>
+
+<div class="gallery">
+  <a href=/itemslist/>
+    <img src="{% static 'images/ramu.jpg' %}" alt="Mountains" width="300" height="300">
+  </a>
+  <div class="desc"><font size="6">RamuCaterings</font></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% load staticfiles %}
+<link href="{% static 'css/AddDonor.css' %}" rel="stylesheet">
+<div class="container">
+  <form action="/orgdetails/" method="post">
+      {% csrf_token %}
+    <div class="row">
+      <div class="col-25">
+        <label for="fname"> Name</label>
+      </div>
+      <div class="col-25">
+        <input type="text" id="name" name="d1" placeholder="name">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="contactnumber">Contact Number</label>
+      </div>
+      <div class="col-25">
+        <input type="number" id="number" name="d2" placeholder="ContactNumber">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="email">Email</label>
+      </div>
+      <div class="col-25">
+        <input type="email" id="email" name="d3" value="{{ mail }}" placeholder="Emil Id">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="password">Password</label>
+      </div>
+      <div class="col-25">
+        <input type="password" id="number" name="d4" placeholder="Password">
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+<table align="center" border="2">
+    <tr>
+        <td>Name</td>
+        <td>ContactNo</td>
+        <td>Email</td>
+        <td>Password</td>
+        <td>Delete</td>
+        <td>Update</td>
+    </tr>
+    {% for x in res4 %}
+        <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.cno }}</td>
+        <td>{{ x.email }}</td>
+        <td>{{ x.password }}</td>
+        <td><a href="/orgupdate/?update_id={{ x.email }}"> Update</a></td>
+        <td>
+            <form action="/orgdelete/" method="post">
+                {% csrf_token %}
+            <input type="submit" value="Delete">
+                <input type="hidden" value="{{ x.email }}" name="delete_id"></form>
+
+
+        </td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include "Welcome.html" %}
+<form action="/itemdetails/" method="post">
+    {% csrf_token %}
+<table align="center" border="1">
+    <tr>
+        <td>
+            <input type="number" placeholder="ItemId" name="i1" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" placeholder="ItemName" name="i2" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select name="i3">
+                <option>--SelectFoodtype--</option>
+                <option>Veg</option>
+                <option>Non-Veg</option>
+                <option>Both</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select name="i4">
+                <option>--Select--</option>
+                <option>150Plate</option>
+                <option>200Plate</option>
+                <option>250Plate</option>
+                <option>300Plate</option>
+                <option>350Plate</option>
+                <option>400Plate</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Add">
+        </td>
+    </tr>
+
+</table>
+    </form>
+</body>
+</html>

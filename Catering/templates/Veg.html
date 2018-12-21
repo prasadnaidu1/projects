@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include "FunctionType.html" %}
+{% load staticfiles %}
+<link href="{% static 'css/veg.css' %}" rel="stylesheet">
+<table align="center" border="0">
+    <tr>
+        <form action="/150plate/" method="post">
+            {% csrf_token %}
+        <td>
+            <button type="submit" value="plate" class="btn">150 Plate</button>
+        </td>
+            </form>
+        <form action="/200plate/" method="post">
+            {% csrf_token %}
+        <td>
+            <button type="submit" value="plate" class="btn">200 Plate</button>
+        </td>
+        </form>
+        <form action="/300plate/" method="post">
+            {% csrf_token %}
+        <td>
+            <button type="submit" value="plate" class="btn">300 Plate</button>
+        </td>
+        </form>
+        <form action="/350plate/" method="post">
+            {% csrf_token %}
+        <td>
+            <button type="submit" value="plate" class="btn">350 Plate</button>
+        </td>
+        </form>
+        <form action="/400plate/" method="post">
+            {% csrf_token %}
+        <td>
+            <button type="submit" value="plate" class="btn">400 Plate</button>
+        </td>
+        </form>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            <div class="gallery">
+                <img src="{% static 'images/veg/22.jpg' %}" alt="Cinque Terre" width="300" height="300">
+            </div>
+        </td>
+        <td>
+            <div class="gallery">
+                <img src="{% static 'images/veg/23.jpg' %}" alt="Cinque Terre" width="300" height="300">
+            </div>
+        </td>
+        <td>
+            <div class="gallery">
+                <img src="{% static 'images/veg/21.jpg' %}" alt="Cinque Terre" width="300" height="300">
+            </div>
+        </td>
+        <td>
+            <div class="gallery">
+                <img src="{% static 'images/veg/24.jpg' %}" alt="Cinque Terre" width="300" height="300">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="gallery">
+                <img src="{% static 'images/veg/25.jpg' %}" alt="Cinque Terre" width="300" height="300">
+            </div>
+        </td>
+
+        <td>
+            <div class="gallery">
+                <img src="{% static 'images/veg/27.jpg' %}" alt="Cinque Terre" width="300" height="300">
+            </div>
+        </td>
+        <td>
+            <div class="gallery">
+                <img src="{% static 'images/veg/28.jpg' %}" alt="Cinque Terre" width="300" height="300">
+            </div>
+        </td>
+        <td>
+            <div class="gallery">
+                <img src="{% static 'images/veg/21.jpg' %}" alt="Cinque Terre" width="300" height="300">
+            </div>
+        </td>
+        <td>
+            <div class="gallery">
+                <img src="{% static 'images/veg/24.jpg' %}" alt="Cinque Terre" width="300" height="300">
+            </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

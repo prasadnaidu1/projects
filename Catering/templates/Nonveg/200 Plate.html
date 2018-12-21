@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% load staticfiles %}
+<link href="{% static 'css/veg.css' %}" rel="stylesheet">
+{% include "FunctionType.html" %}
+<h3 align="center">Menu of 200 Plate</h3>
+<table align="center" border="1">
+    <tr>
+        <td>ItemId</td>
+        <td>ItemName</td>
+
+    </tr>
+    {% for x in ans1 %}
+        <tr>
+        <td>{{ x.item_id }}</td>
+        <td>{{ x.item_name }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<form action="/order/" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Place Order">
+</form>
+</body>
+</html>

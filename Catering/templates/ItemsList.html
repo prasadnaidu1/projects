@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% load staticfiles %}
+<link href="{% static 'css/Different_typesCaterings.css' %}" rel="stylesheet">
+<div class="gallery">
+
+    <img src="{% static 'images/11.jpg' %}" width="300" height="200">
+
+
+</div>
+
+<div class="gallery">
+
+    <img src="{% static 'images/12.jpg' %}"  width="300" height="200">
+
+
+</div>
+
+<div class="gallery">
+
+    <img src="{% static 'images/13.jpg' %}"  width="300" height="200">
+
+
+</div>
+
+<div class="gallery">
+
+    <img src="{% static 'images/14.jpg' %}"  width="300" height="200">
+
+
+</div>
+<div class="gallery">
+
+    <img src="{% static 'images/14.jpg' %}"  width="300" height="200">
+
+
+</div>
+<div class="gallery">
+
+    <img src="{% static 'images/14.jpg' %}"  width="300" height="200">
+
+
+
+</div><br><br>
+<form action="/event/" method="post">
+    {% csrf_token %}
+<h2 align="center">
+    <input type="submit" value="Place Order"></h2>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include "FunctionType.html" %}
+{% load staticfiles %}
+<link href="{% static 'css/veg.css' %}" rel="stylesheet">
+<h3 align="center">Menu of 200 Plate</h3>
+<table align="center" border="1">
+    <tr>
+        <td>ItemId</td>
+        <td>ItemName</td>
+
+    </tr>
+    {% for x in res1 %}
+        <tr>
+        <td>{{ x.item_id }}</td>
+        <td>{{ x.item_name }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<br>
+<form action="/sweet/" method="post">
+    {% csrf_token %}
+<table>
+    <tr>
+        (Choose Any One Of Item)
+        <td>
+            <input type="radio" value="Laddu" name="t1">Laddu
+            <input type="radio" value="Badhsha" name="t1">Badhsha
+            <input type="radio" value="Jangry" name="t1">Jangry
+            <input type="radio" value="MaliaKaaja" name="t1">MaliaKaaja
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <input type="submit" value="Choose"></td>
+    </tr>
+    </table>
+    </form>
+<form action="/order/" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Place Order">
+</form>
+</body>
+</html>

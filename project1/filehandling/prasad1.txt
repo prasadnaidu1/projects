@@ -1,0 +1,6 @@
+
+python is high level programming language
+python is automatically
+python is extensible
+python is object oriented
+python is procedure oriented

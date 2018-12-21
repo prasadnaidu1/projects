@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include "Welcome.html" %}
+{% load staticfiles %}
+<link href="{% static 'css/UserLogin.css' %}" rel="stylesheet">
+
+  <form action="/userlogindetails/" class="form-container" method="post">
+      {% csrf_token %}
+    <h1>Login</h1>
+
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Username" name="e1" required><br>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Password" name="e2" required>
+
+    <button type="submit" class="btn">Login</button>
+
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin-Login</title>
+</head>
+<body>
+{% include "ShowIndex.html" %}
+<form action="/adminlogindetails/" method="post">
+    {% csrf_token %}
+    <table align="center" border="0">
+        <tr>
+            <td>
+                <input type="text" placeholder="username" name="u1"  required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="password" placeholder="Password"  name="u2" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="AdminLogin">
+            </td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>

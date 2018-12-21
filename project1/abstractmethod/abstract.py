@@ -1,0 +1,1 @@
+from abc import ABC,abstractmethodclass payment(ABC):    @abstractmethod    def pay(self,amount):        pass    def show(self):        print('hello')class card(payment):    def pay(self,amount):        print(amount,'is paid to this account')#calling blockc=card()c.pay(4000)

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table align="center" border="0">
+     <tr>
+         <td>
+
+             <img src="{% static 'images/main.jpg'%}" width="200" height="200">
+         </td>
+         <td>
+             <font size="8" face="Matura MT Script Capitals">Blood Donor</font>
+         </td>
+
+     </tr>
+    <tr >
+        <td colspan="3" align="center" style="background: greenyellow">
+
+            <marquee> <b>A Drop of Blood Can Save Life! Don't Waste It And Donate Blood.</b></marquee>
+
+        </td>
+    </tr>
+
+</table>
+
+<hr>
+<table align="center" border="1">
+    <tr>
+        <th width="120">
+            <a href="/home/?type=d_home">Home</a>       </th>
+        <th width="120">
+           <a href="/openDonorlogin/?type=donor_login" >Donor</a>
+        </th>
+        <th width="120">
+            <a href="/openOrganisation/?type=org_login">Organisation</a>
+        </th>
+        <th width="120">
+            NonUser
+        </th>
+        <th width="120">
+            <a href="/admin/" >Admin</a>
+        </th>
+        <th width="120">
+          <a href="//">ContactUs</a>
+        </th>
+    </tr>
+
+</table>
+{% if type == "home" %}
+<table align="center">
+    <tr>
+        <td width="200">
+            A blood donation occurs when a person voluntarily
+            has blood drawn and used for transfusions and/or made
+            into biopharmaceutical medications by a process called
+            fractionation (separation of whole-blood components).
+            Donation may be of whole blood, or of specific components
+            directly (the latter called apheresis). Blood banks often
+            participate in the collection process as well as the procedures
+            that follow it.
+        </td>
+
+
+        <td>
+            <marquee>
+            <img src="{% static 'images/logo.png'%}" width="200" height="200"></marquee>
+        </td>
+    </tr>
+
+</table>
+{% endif %}
+
+
+{% if type == "donor_login" %}
+<table align="center" border="2">
+    <tr>
+        <th>Donor Login</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" placeholder="Username" name="d_uname" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="password" placeholder="Password" name="d_upass" required>
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            <input type="submit" value="Login">
+        </td>
+    </tr>
+<tr>
+    <th>
+       <a href="/newdonor/?type=newdonor"> New Donor Register</a>
+    </th>
+</tr>
+</table>
+{% endif %}
+{% if type == "org_login" %}
+<table align="center" border="2">
+    <tr>
+        <th>Organisation Login</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" placeholder="Username" name="o_uname" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="password" placeholder="Password" name="o_upass" required>
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            <input type="submit" value="Login">
+        </td>
+    </tr>
+</table>
+{% endif %}
+{% if type == "newdonor" %}
+<table align="center" border="1">
+    <tr>
+        <th>Donor Registration</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" placeholder="Name" name="name" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="number" placeholder="ContactNo" name="contact" required>
+        </td>
+    </tr>
+    <tr>
+        <td width="200">
+
+        <form action="//">
+            {% csrf_token %}
+
+            <select name="d_state" onchange="check()" id="one">
+                {% for x in state %}
+               <option>{{ x }}</option>
+                {% endfor %}
+            </select>
+        </form>
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select name="city">
+
+
+            </select>
+        </td>
+    </tr>
+</table>
+{% endif %}
+</body>
+</html>

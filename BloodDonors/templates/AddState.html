@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% load staticfiles %}
+<link href="{% static 'css/Addcity.css' %}" rel="stylesheet">
+   <div class="container">
+  <form action="/statedetails/" method="post">
+      {% csrf_token %}
+
+    <label for="fname">State ID</label>
+    <input type="number" id="fname" name="c1" placeholder="StateID"><br>
+
+    <label for="lname">StateName</label>
+    <input type="text" id="lname" name="c2" placeholder="StateName">
+
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
+
+<table align="center" border="2">
+    <tr>
+        <td>ID</td>
+        <td>StateName</td>
+    </tr>
+
+    {% for x in res %}
+        <tr>
+        <td>{{ x.id }}</td>
+        <td>{{ x.state }}</td>
+
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
